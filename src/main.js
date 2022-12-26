@@ -1,51 +1,20 @@
 // список груп
 let playList = [
-    {
-     author: "LED ZEPPELIN",
-     song:"STAIRWAY TO HEAVEN"
-    },
-    {
-     author: "QUEEN",
-     song:"BOHEMIAN RHAPSODY"
-    },
-    {
-     author: "LYNYRD SKYNYRD",
-     song:"FREE BIRD"
-    },
-    {
-     author: "DEEP PURPLE",
-     song:"SMOKE ON THE WATER"
-    },
-    {
-     author: "JIMI HENDRIX",
-     song:"ALL ALONG THE WATCHTOWER"
-    },
-    {
-     author: "AC/DC",
-     song:"BACK IN BLACK"
-    },
-    {
-     author: "QUEEN",
-     song:"WE WILL ROCK YOU"
-    },
-    {
-     author: "METALLICA",
-     song:"ENTER SANDMAN"
-    }
+    {author: "LED ZEPPELIN", song:"STAIRWAY TO HEAVEN"},
+    {author: "QUEEN", song:"BOHEMIAN RHAPSODY"},
+    {author: "LYNYRD SKYNYRD", song:"FREE BIRD"},
+    {author: "DEEP PURPLE", song:"SMOKE ON THE WATER"},
+    {author: "JIMI HENDRIX", song:"ALL ALONG THE WATCHTOWER"},
+    {author: "AC/DC", song:"BACK IN BLACK"},
+    {author: "QUEEN", song:"WE WILL ROCK YOU"},
+    {author: "METALLICA", song:"ENTER SANDMAN"}
 ];
 
 const ol = document.createElement('ol');
-    playList.forEach(function (list) {
+ol.classList.add('playlist');
+    playList.forEach((list) => {
         const li = document.createElement('li');
-        const space = document.createElement('space');
-        const strongSong = document.createElement('strong');
-
-        strongSong.textContent = "play song: ";
-        space.textContent = " - ";
-        li.appendChild(strongSong);
-        li.append(list.author);
-        li.appendChild(space);
-        li.appendChild(document.createTextNode(list.song));
+        li.innerText = `Автор та пісня: ${list.author}/ ${list.song};`;
         ol.appendChild(li);
     });
 document.querySelector("div").appendChild(ol);
