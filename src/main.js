@@ -14,7 +14,7 @@ const ol = document.createElement('ol');
 ol.classList.add('playlist');
     playList.forEach((list) => {
         const li = document.createElement('li');
-        li.innerText = `Автор та пісня: ${list.author}/ ${list.song};`;
+        li.innerText = `${list.author}/ ${list.song};`;
         ol.appendChild(li);
     });
 document.querySelector("div").appendChild(ol);
